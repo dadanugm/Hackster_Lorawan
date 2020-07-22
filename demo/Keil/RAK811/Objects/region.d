@@ -1,0 +1,15 @@
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\region\Region.c
+.\objects\region.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\region.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\region.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\system\timer.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\LoRaMac.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\region\Region.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\region\RegionAS923.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\region\RegionAU915.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\region\RegionCN470.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\region\RegionEU433.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\region\RegionEU868.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\region\RegionKR920.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\region\RegionIN865.h
+.\objects\region.o: ..\..\..\src\LoRaWAN\master\mac\region\RegionUS915.h
