@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\RAK811_HF.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\RAK811_HF.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Jul 21 16:47:38 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sun Jul 26 13:35:04 2020
 <BR><P>
 <H3>Maximum Stack Usage =       1528 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -714,8 +714,9 @@ Global Symbols
 <LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_ack_retrans
 <LI><a href="#[34a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_GetVersion
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv_ex
-<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv
 <LI><a href="#[332]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_hex_buf
+<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv
+<LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_gps_data
 </UL>
 
 <P><STRONG><a name="[e7]"></a>_printf_pre_padding</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, _printf_pad.o(.text))
@@ -756,8 +757,8 @@ Global Symbols
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_truncate_unsigned
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_truncate_signed
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_i
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_d
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_d
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_i
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_u
 </UL>
 
@@ -1669,11 +1670,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GpioMcuWrite
 </UL>
-<BR>[Called By]<UL><LI><a href="#[302]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysEnterUltraPowerStopMode
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276WriteBuffer
+<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276WriteBuffer
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276ReadBuffer
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BoardDeInitMcu
 <LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_gpio
+<LI><a href="#[302]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysEnterUltraPowerStopMode
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BoardDeInitMcu
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GpsMcuStart
 <LI><a href="#[2f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetAntSw
 </UL>
@@ -2311,8 +2312,8 @@ Global Symbols
 <P><STRONG><a name="[1af]"></a>HAL_UART_Init</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, stm32l1xx_hal_uart.o(i.HAL_UART_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = HAL_UART_Init &rArr; UART_SetConfig &rArr; HAL_RCC_GetPCLK1Freq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
-<LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
+<BR>[Calls]<UL><LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
+<LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartMcuConfig
 </UL>
@@ -4811,8 +4812,8 @@ Global Symbols
 <P><STRONG><a name="[94]"></a>SX1276Init</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, sx127x.o(i.SX1276Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = SX1276Init &rArr; SX1276SetModem &rArr; SX1276SetSleep &rArr; TimerStop &rArr; TimerSetTimeout &rArr; RtcSetTimeout &rArr; RtcStartWakeUpAlarm &rArr; RtcComputeTimerTimeToAlarmTick &rArr; round &rArr; __aeabi_cdcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
-<LI><a href="#[1d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerInit
+<BR>[Calls]<UL><LI><a href="#[1d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerInit
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetModem
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276IoIrqInit
 <LI><a href="#[2f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetOpMode
@@ -4862,10 +4863,10 @@ Global Symbols
 <P><STRONG><a name="[3c]"></a>SX1276OnDio0Irq</STRONG> (Thumb, 890 bytes, Stack size 24 bytes, sx127x.o(i.SX1276OnDio0Irq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = SX1276OnDio0Irq &rArr; TimerStart &rArr; TimerInsertNewHeadTimer &rArr; TimerSetTimeout &rArr; RtcSetTimeout &rArr; RtcStartWakeUpAlarm &rArr; RtcComputeTimerTimeToAlarmTick &rArr; round &rArr; __aeabi_cdcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
-<LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStop
+<BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStop
 <LI><a href="#[1f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStart
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
 <LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276ReadFifo
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> sx127x.o(.data)
@@ -4873,9 +4874,9 @@ Global Symbols
 <P><STRONG><a name="[3d]"></a>SX1276OnDio1Irq</STRONG> (Thumb, 404 bytes, Stack size 8 bytes, sx127x.o(i.SX1276OnDio1Irq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = SX1276OnDio1Irq &rArr; TimerStop &rArr; TimerSetTimeout &rArr; RtcSetTimeout &rArr; RtcStartWakeUpAlarm &rArr; RtcComputeTimerTimeToAlarmTick &rArr; round &rArr; __aeabi_cdcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
+<BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStop
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
-<LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStop
 <LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276WriteFifo
 <LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276ReadFifo
 </UL>
@@ -4884,9 +4885,9 @@ Global Symbols
 <P><STRONG><a name="[3e]"></a>SX1276OnDio2Irq</STRONG> (Thumb, 322 bytes, Stack size 40 bytes, sx127x.o(i.SX1276OnDio2Irq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = SX1276OnDio2Irq &rArr; TimerStop &rArr; TimerSetTimeout &rArr; RtcSetTimeout &rArr; RtcStartWakeUpAlarm &rArr; RtcComputeTimerTimeToAlarmTick &rArr; round &rArr; __aeabi_cdcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
+<BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStop
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
-<LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStop
 <LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
@@ -4907,10 +4908,10 @@ Global Symbols
 <P><STRONG><a name="[88]"></a>SX1276OnTimeoutIrq</STRONG> (Thumb, 252 bytes, Stack size 8 bytes, sx127x.o(i.SX1276OnTimeoutIrq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = SX1276OnTimeoutIrq &rArr; SX1276SetPublicNetwork &rArr; SX1276SetModem &rArr; SX1276SetSleep &rArr; TimerStop &rArr; TimerSetTimeout &rArr; RtcSetTimeout &rArr; RtcStartWakeUpAlarm &rArr; RtcComputeTimerTimeToAlarmTick &rArr; round &rArr; __aeabi_cdcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
-<LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStop
+<BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStop
 <LI><a href="#[1f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStart
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetPublicNetwork
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetModem
 <LI><a href="#[2f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetOpMode
@@ -4965,8 +4966,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GpioWrite
 <LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SpiInOut
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
-<LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_rd_reg
+<BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_rd_reg
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
 <LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276ReadFifo
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> sx127x-board.o(.constdata)
@@ -5113,10 +5114,10 @@ Global Symbols
 <P><STRONG><a name="[a1]"></a>SX1276SetRx</STRONG> (Thumb, 636 bytes, Stack size 16 bytes, sx127x.o(i.SX1276SetRx))
 <BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = SX1276SetRx &rArr; TimerSetValue &rArr; TimerStop &rArr; TimerSetTimeout &rArr; RtcSetTimeout &rArr; RtcStartWakeUpAlarm &rArr; RtcComputeTimerTimeToAlarmTick &rArr; round &rArr; __aeabi_cdcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
-<LI><a href="#[1f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStart
+<BR>[Calls]<UL><LI><a href="#[1f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStart
 <LI><a href="#[1d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerSetValue
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetChannel
 <LI><a href="#[2f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetOpMode
 <LI><a href="#[1c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
@@ -5163,10 +5164,10 @@ Global Symbols
 <P><STRONG><a name="[2f7]"></a>SX1276SetTx</STRONG> (Thumb, 182 bytes, Stack size 16 bytes, sx127x.o(i.SX1276SetTx))
 <BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = SX1276SetTx &rArr; TimerSetValue &rArr; TimerStop &rArr; TimerSetTimeout &rArr; RtcSetTimeout &rArr; RtcStartWakeUpAlarm &rArr; RtcComputeTimerTimeToAlarmTick &rArr; round &rArr; __aeabi_cdcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
-<LI><a href="#[1f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStart
+<BR>[Calls]<UL><LI><a href="#[1f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStart
 <LI><a href="#[1d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerSetValue
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
 <LI><a href="#[2f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetOpMode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Send
@@ -5190,10 +5191,10 @@ Global Symbols
 <P><STRONG><a name="[a3]"></a>SX1276SetTxContinuousWave</STRONG> (Thumb, 132 bytes, Stack size 64 bytes, sx127x.o(i.SX1276SetTxContinuousWave))
 <BR><BR>[Stack]<UL><LI>Max Depth = 400<LI>Call Chain = SX1276SetTxContinuousWave &rArr; SX1276SetTxConfig &rArr; SX1276SetModem &rArr; SX1276SetSleep &rArr; TimerStop &rArr; TimerSetTimeout &rArr; RtcSetTimeout &rArr; RtcStartWakeUpAlarm &rArr; RtcComputeTimerTimeToAlarmTick &rArr; round &rArr; __aeabi_cdcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
-<LI><a href="#[1f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStart
+<BR>[Calls]<UL><LI><a href="#[1f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerStart
 <LI><a href="#[1d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerSetValue
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetTxConfig
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetChannel
 <LI><a href="#[2f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetOpMode
@@ -5245,8 +5246,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GpioWrite
 <LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SpiInOut
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
-<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_wr_reg
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_wr_reg
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
 <LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276WriteFifo
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> sx127x-board.o(.constdata)
@@ -5521,8 +5522,8 @@ Global Symbols
 <LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerGetValue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[348]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_LoRaP2PTxStop
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetSleep
 <LI><a href="#[1d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerSetValue
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetSleep
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_join_callback
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_P2PTxContinueTimerEvent
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetStby
@@ -5675,7 +5676,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_lorawan_class
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv_ex
-<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv
 <LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_boot
 <LI><a href="#[332]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_hex_buf
 <LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_error
@@ -5706,7 +5706,9 @@ Global Symbols
 <LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_gpio
 <LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_band
 <LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_abp_info
+<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_gps_data
 <LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LoRaMacInitialization
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardFault_Handler
 </UL>
@@ -5717,11 +5719,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv_ex
-<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv
 <LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_read_config
 <LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_rd_reg
 <LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_rd_iic
-<LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_gps_data
+<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv
 </UL>
 
 <P><STRONG><a name="[271]"></a>floor</STRONG> (Thumb, 204 bytes, Stack size 24 bytes, floor.o(i.floor))
@@ -5743,10 +5744,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_partition
 </UL>
 
-<P><STRONG><a name="[32d]"></a>get_gps_data</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, app.o(i.get_gps_data))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = get_gps_data &rArr; e_printf_raw &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
+<P><STRONG><a name="[32d]"></a>get_gps_data</STRONG> (Thumb, 312 bytes, Stack size 144 bytes, app.o(i.get_gps_data))
+<BR><BR>[Stack]<UL><LI>Max Depth = 304 + Unknown Stack Size
+<LI>Call Chain = get_gps_data &rArr; e_printf &rArr; vsnprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[32a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;e_printf_raw
+<BR>[Calls]<UL><LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;e_printf
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -5795,7 +5798,7 @@ Global Symbols
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;McpsIndication
 </UL>
 
-<P><STRONG><a name="[db]"></a>main</STRONG> (Thumb, 270 bytes, Stack size 24 bytes, app.o(i.main))
+<P><STRONG><a name="[db]"></a>main</STRONG> (Thumb, 276 bytes, Stack size 24 bytes, app.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 544 + Unknown Stack Size
 <LI>Call Chain = main &rArr; rw_LoRaTxData &rArr; LoRaMacMcpsRequest &rArr; Send &rArr; ScheduleTx &rArr; RegionNextChannel &rArr; RegionCN470NextChannel &rArr; RegionCommonUpdateBandTimeOff &rArr; TimerGetElapsedTime &rArr; RtcComputeElapsedTime &rArr; RtcConvertCalendarTickToTimerTime &rArr; round &rArr; __aeabi_cdcmple
 </UL>
@@ -6642,11 +6645,11 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 368 + Unknown Stack Size
 <LI>Call Chain = lora_rd_iic &rArr; out_hex_buf &rArr; e_printf &rArr; vsnprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2cResetBus
+<BR>[Calls]<UL><LI><a href="#[32a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;e_printf_raw
+<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2cResetBus
 <LI><a href="#[1c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2cReadBuffer
 <LI><a href="#[332]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_hex_buf
 <LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_error
-<LI><a href="#[32a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;e_printf_raw
 <LI><a href="#[328]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strtoul
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoi
@@ -6657,10 +6660,10 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 272 + Unknown Stack Size
 <LI>Call Chain = lora_rd_reg &rArr; out_hex_buf &rArr; e_printf &rArr; vsnprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276ReadBuffer
+<BR>[Calls]<UL><LI><a href="#[32a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;e_printf_raw
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276ReadBuffer
 <LI><a href="#[332]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_hex_buf
 <LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_error
-<LI><a href="#[32a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;e_printf_raw
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strtoul
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoi
 </UL>
@@ -6671,8 +6674,8 @@ Local Symbols
 <LI>Call Chain = lora_read_config &rArr; read_config &rArr; read_partition &rArr; get_active_partition &rArr; read_data
 </UL>
 <BR>[Calls]<UL><LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_config
-<LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_error
 <LI><a href="#[32a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;e_printf_raw
+<LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_error
 <LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;e_printf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> at_cmd.o(.data)
@@ -6771,19 +6774,19 @@ Local Symbols
 <LI>Call Chain = lora_sleep &rArr; rw_LoadUsrConfig &rArr; LoRaMacMibSetRequestConfirm &rArr; OnRxWindow2TimerEvent &rArr; TimerStop &rArr; TimerSetTimeout &rArr; RtcSetTimeout &rArr; RtcStartWakeUpAlarm &rArr; RtcComputeTimerTimeToAlarmTick &rArr; round &rArr; __aeabi_cdcmple
 </UL>
 <BR>[Calls]<UL><LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartFlush
+<LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_error
+<LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_LoadUsrConfig
+<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv
+<LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;e_printf
 <LI><a href="#[302]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysEnterUltraPowerStopMode
 <LI><a href="#[344]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX127X_INIT
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Write
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276SetSleep
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SX1276Read
-<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayMs
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BoardDeInitMcu
-<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lora_recv
-<LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;out_error
-<LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_LoadUsrConfig
-<LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;e_printf
 <LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOIRQ_Enable
+<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayMs
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BoardInitMcu
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BoardDeInitMcu
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> at_cmd.o(.data)
 </UL>

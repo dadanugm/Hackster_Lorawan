@@ -31,20 +31,22 @@ TimerEvent_t join_timer;
 // functions
 void timer_join_callback(void);
 void get_gps_data(void);
+void module_sleep(void);
 
-//variable lora node for Ultrasonic
+//variable lora node for gps
 uint8_t dev_eui[8] ={0x00,0x00,0x00,0x00,0x03,0x57,0x35,0x51};
 uint8_t app_eui[8] ={0x00,0x00,0x00,0x00,0x03,0x57,0x35,0x10};
 uint8_t app_key[16] ={0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c};
 // variable for gps
 uint8_t latitude[10];
+uint8_t lat_pole[2];
 uint8_t longitude[11];
-
-
-// variable
+uint8_t long_pole[2];
+uint8_t altitude[8];
+uint8_t alt_unit[2];
+uint8_t lora_payload[70];
+int payload_len;
 int ready = 0;
-extern uint8_t lora_data_send[128];
-extern uint8_t lora_data_length;
 uint8_t tes[4] = "test";
 
 
@@ -89,7 +91,7 @@ int main( void )
 			{
 				get_gps_data();
 				ready = 0;
-				rw_LoRaTxData(0,2,4,tes);	
+				rw_LoRaTxData(0,2,payload_len,lora_payload);	
 			}
         lora_cli_loop();
         TimerLowPowerHandler( );
@@ -106,17 +108,62 @@ void timer_join_callback(void)
 
 void get_gps_data(void)
 {
-	for(int i=0;i<sizeof(latitude);i++)
-	{
-		latitude[i] = NmeaGpsData.NmeaLatitude[i];
-		e_printf_raw(latitude,sizeof(latitude));
-	}
+	int i;
+	for(i=0;i<sizeof(latitude);i++){
+		latitude[i] = NmeaGpsData.NmeaLatitude[i];}
 	
-	for(int j=0;j<sizeof(longitude);j++)
-	{
-		longitude[j] = NmeaGpsData.NmeaLongitude[j];
-		e_printf_raw(longitude,sizeof(longitude));
-	}
+	for(i=0;i<sizeof(longitude);i++){
+		longitude[i] = NmeaGpsData.NmeaLongitude[i];}
+	
+	for(i=0;i<2;i++){
+		lat_pole[i] = NmeaGpsData.NmeaLatitudePole[i];
+		long_pole[i] = NmeaGpsData.NmeaLongitudePole[i];
+		alt_unit[i] = NmeaGpsData.NmeaAltitudeUnit[i];}
+	
+	for(i=0;i<sizeof(altitude);i++){
+		altitude[i] = NmeaGpsData.NmeaAltitude[i];}
+	
+	payload_len = sprintf((char*)lora_payload,"%i%i%i%i%i%i%i%i%i%i,%i%i,%i%i%i%i%i%i%i%i%i%i%i,%i%i,%i%i%i%i%i%i%i%i,%i%i",
+		latitude[0],latitude[1],latitude[2],latitude[3],latitude[4],latitude[5],latitude[6],
+		latitude[7],latitude[8],latitude[9],lat_pole[0],lat_pole[1],
+		longitude[0],longitude[1],longitude[2],longitude[3],longitude[4],longitude[5],longitude[6],
+		longitude[7],longitude[8],longitude[9],longitude[10],long_pole[0],long_pole[1],
+		altitude[0],altitude[1],altitude[2],altitude[3],altitude[4],altitude[5],altitude[6],
+		altitude[7],alt_unit[0],alt_unit[1]);
+	
+	e_printf(lora_payload);
+}
+
+
+void module_sleep(void)
+{
+	DelayMs(10);
+  
+  SX1276SetSleep();
+  SX1276Write(REG_OPMODE,SX1276Read(REG_OPMODE)& 0xF8);
+    
+  __HAL_RCC_RTC_DISABLE();
+  
+  __HAL_RCC_LSE_CONFIG(RCC_LSE_OFF);
+
+    
+  BoardDeInitMcu();
+  SysEnterUltraPowerStopMode();
+  BoardInitMcu();
+  
+  __HAL_RCC_LSE_CONFIG(RCC_LSE_ON);
+  
+  __HAL_RCC_RTC_ENABLE();
+
+  SX127X_INIT();
+	
+	GPIOIRQ_Enable();
+  
+  rw_LoadUsrConfig(); 
+  
+  lora_recv(LORA_EVENT_WAKEUP, 0, 0, NULL);
+  
+  //UartFlush(&Uart1);
 }
 
 

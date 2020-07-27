@@ -514,17 +514,17 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=.\objects\startup_stm32l1xx_md.d -o.\objects\startup_stm32l1xx_md.
-o -I.\RTE\_RAK811_HF -IC:\Users\LENOVO\AppData\Local\Arm\Packs\Keil\STM32L1xx_D
-FP\1.2.0\Device\Include -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__UVISION_V
-ERSION SETA 530" --predefine="STM32L151xB SETA 1" --predefine="_RTE_ SETA 1" --
-list=.\listings\startup_stm32l1xx_md.lst ..\..\..\src\board\RAK811\cmsis\arm-st
+o -I.\RTE\_RAK811_HF -I"C:\Users\surya ramadhan\AppData\Local\Arm\Packs\Keil\ST
+M32L1xx_DFP\1.2.0\Device\Include" -IC:\Keil_v5\ARM\CMSIS\Include --predefine="_
+_UVISION_VERSION SETA 528" --predefine="STM32L151xB SETA 1" --list=.\listings\s
+tartup_stm32l1xx_md.lst ..\..\..\src\board\RAK811\cmsis\arm-std\startup_stm32l1
 
 
 
 ARM Macro Assembler    Page 9 
 
 
-d\startup_stm32l1xx_md.s
+xx_md.s
 
 
 
@@ -1475,4 +1475,4 @@ l1xx_md.s
       None
 Comment: __use_two_region_memory unused
 3 symbols
-410 symbols in table
+409 symbols in table

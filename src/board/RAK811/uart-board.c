@@ -288,6 +288,7 @@ void HAL_UART_RxCpltCallback( UART_HandleTypeDef *handle )
     if( uart->IrqNotify != NULL )
       uart->IrqNotify( UART_NOTIFY_RX );
     //__HAL_UART_FLUSH_DRREGISTER( handle );
+		//HAL_UART_Transmit(&UartContext[UART_1].UartHandle, &UartContext[uartId].RxData, 1, 0xFFFF);
     HAL_UART_Receive_IT( &UartContext[uartId].UartHandle, &UartContext[uartId].RxData, 1 );
 }
 
@@ -347,9 +348,9 @@ void e_printf(const char *format, ...)
     HAL_UART_Transmit(&UartContext[UART_1].UartHandle, (uint8_t *)&ll_msg_buf_, len, 0xFFFF);
 }
 
-int e_printf_raw(uint8_t *buffer, int size)
+int e_printf_raw(const char *buffer, int size)
 {
-    HAL_UART_Transmit(&UartContext[UART_1].UartHandle, buffer, size, 0xFFFF);
+    HAL_UART_Transmit(&UartContext[UART_1].UartHandle, (uint8_t *)buffer, size, 0xFFFF);
 }
 
 int e_getchar(void)
